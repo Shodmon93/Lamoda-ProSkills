@@ -18,5 +18,6 @@ class HomeImageHolder (view:View) : RecyclerView.ViewHolder(view) {
             .into(binding.firstPicture)
         binding.firstTittle.text = homeRViewData.tittle
         binding.secondTittle.text = homeRViewData.tittle
+
     }
 }

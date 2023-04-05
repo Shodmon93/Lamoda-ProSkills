@@ -10,7 +10,7 @@ import com.example.lamoda_v2.data.HomeRViewData
 import com.example.lamoda_v2.viewHolder.HomeImageHolder
 import com.example.lamoda_v2.viewHolder.HomeRecyclerViewHolder
 
-class HomeMainAdapter : ListAdapter<HomeRViewData,ViewHolder>(HomeRVDataDiffUtil()) {
+class HomeMainAdapter(private val onClick: (item : HomeRViewData) -> Unit) : ListAdapter<HomeRViewData,ViewHolder>(HomeRVDataDiffUtil()) {
 
 
     companion object {
@@ -52,7 +52,11 @@ class HomeMainAdapter : ListAdapter<HomeRViewData,ViewHolder>(HomeRVDataDiffUtil
        when(holder){
            is HomeRecyclerViewHolder -> holder.bind(getItem(position))
            is HomeImageHolder -> holder.bind(getItem(position))
-
        }
+        holder.itemView.setOnClickListener {
+            onClick.invoke(getItem(position))
+        }
+
+
     }
 }

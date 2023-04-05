@@ -3,7 +3,9 @@ package com.example.lamoda_v2.model
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.lamoda_v2.R
+import com.example.lamoda_v2.data.Brand
 import com.example.lamoda_v2.data.HomeRViewData
+import com.example.lamoda_v2.data.ManItemData
 import com.example.lamoda_v2.data.StoryItemData
 const val PICTURE = "https://picsum.photos/200/300"
 
@@ -11,14 +13,14 @@ class Model {
     ////     var picture: MutableLiveData<Int> = MutableLiveData()
 ////     var storyTitle: MutableLiveData<String> = MutableLiveData()
 //
-//    private var _manItemData: MutableLiveData<ArrayList<ManItemData>>
+    private var _manItemData: MutableLiveData<ArrayList<ManItemData>>
     private var _storyItemData: MutableLiveData<ArrayList<StoryItemData>>
     private var _homeRViewData: MutableLiveData<ArrayList<HomeRViewData>>
 
     //    private var _brandData: MutableLiveData<ArrayList<Brand>>
 //
     init {
-//        _manItemData = MutableLiveData(getManData())
+        _manItemData = MutableLiveData(getManData())
         _storyItemData = MutableLiveData(getStoryData())
         _homeRViewData = MutableLiveData(getHomeRViewData())
 //        _brandData = MutableLiveData(getBrandData())
@@ -26,7 +28,7 @@ class Model {
 
     //
 //
-//    var manItemData: LiveData<ArrayList<ManItemData>> = _manItemData
+    var manItemData: LiveData<ArrayList<ManItemData>> = _manItemData
     var storyItemData: LiveData<ArrayList<StoryItemData>> = _storyItemData
     var homeRViewData : LiveData<ArrayList<HomeRViewData>> = _homeRViewData
 
@@ -78,15 +80,15 @@ class Model {
 ////         return _brand
 ////    }
 ////
-////    fun getManData(): ArrayList<ManItemData> {
-////        val item: ArrayList<ManItemData> = ArrayList()
-////        item.add(ManItemData(0, "Adidas", Brand(0, "Sportswear"), R.drawable.img_3339, 1022))
-////        item.add(ManItemData(1, "Nike", Brand(1, "Nike Air"), R.drawable.img_3338, 1023))
-////        item.add(ManItemData(2, "Timberland", Brand(2, "Atwells Ave"), R.drawable.img_3340, 1024))
-////        item.add(ManItemData(3, "Pull", Brand(3, "Faux suede"), R.drawable.img_3341, 1025))
-////        item.add(ManItemData(4, "All-Star", Brand(4, "Converse"), R.drawable.img_3342, 1026))
-////        return item
-////    }
+    fun getManData(): ArrayList<ManItemData> {
+        val item: ArrayList<ManItemData> = ArrayList()
+        item.add(ManItemData(0, "Adidas", Brand( "Sportswear"), R.drawable.img_3339, 1022))
+        item.add(ManItemData(1, "Nike", Brand( "Nike Air"), R.drawable.img_3338, 1023))
+        item.add(ManItemData(2, "Timberland", Brand( "Atwells Ave"), R.drawable.img_3340, 1024))
+        item.add(ManItemData(3, "Pull", Brand( "Faux suede"), R.drawable.img_3341, 1025))
+        item.add(ManItemData(4, "All-Star", Brand( "Converse"), R.drawable.img_3342, 1026))
+        return item
+    }
 //
 //
 //

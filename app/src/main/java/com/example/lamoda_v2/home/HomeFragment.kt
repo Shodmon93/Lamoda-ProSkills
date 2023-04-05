@@ -8,8 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lamoda_v2.R
 import com.example.lamoda_v2.adapters.homeAdapter.HomeMainAdapter
 import com.example.lamoda_v2.adapters.recyclerView.RecyclerViewAdapter
 import com.example.lamoda_v2.databinding.FragmentHomeBinding
@@ -37,30 +40,22 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         manItemViewModel = ViewModelProvider(requireActivity())[ManItemViewModel::class.java]
-    //    observeData()
         initUi()
 
     }
 
     private fun initUi() {
         recyclerView = binding.homeRecyclerView
-        adapter = HomeMainAdapter()
+        adapter = HomeMainAdapter{
+            item ->
+            Navigation.findNavController(binding.root).navigate(R.id.action_nav_home_to_itemDescriptionFragment)
+
+        }
         manItemViewModel.getHomeRViewData.observe(viewLifecycleOwner , Observer{data ->
             adapter.submitList(data)
         })
         recyclerView.adapter = adapter
 
     }
-
-//    private fun observeData() {
-//        manItemViewModel.getManItemData.observe(viewLifecycleOwner, Observer {
-//            adapter.setData(it)
-//        })
-//        manItemViewModel.getStoryItemData.observe(viewLifecycleOwner, Observer {
-//            adapter.setStoryItemData(it)
-//        })
-//        Log.d("ViewModel getManItemData", "${manItemViewModel.getManItemData.value}")
-//    }
-
 
 }
