@@ -35,7 +35,7 @@ class CatalogAdapter : ListAdapter<Brand, CatalogAdapter.CatalogViewHolder>(
         fun bind(brand: Brand){
 
             Glide.with(binding.root)
-                .load(brand.urls.regular)
+                .load(brand.urls?.regular)
                 .into(binding.storyPhoto)
 
         }
