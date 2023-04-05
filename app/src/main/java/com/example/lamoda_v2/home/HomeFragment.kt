@@ -47,7 +47,6 @@ class HomeFragment : Fragment() {
         adapter = HomeMainAdapter()
         manItemViewModel.getHomeRViewData.observe(viewLifecycleOwner , Observer{data ->
             adapter.submitList(data)
-
         })
         recyclerView.adapter = adapter
 

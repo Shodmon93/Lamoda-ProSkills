@@ -21,9 +21,9 @@ class ViewPagerAdapter : androidx.recyclerview.widget.ListAdapter<Season, ViewPa
 
         fun bind (season: Season){
             Glide.with(binding.root)
-                .load(season.imageView)
+                .load(season.urls?.regular)
                 .into(binding.seasonImage)
-            binding.seasonTittle.text = season.text
+            binding.seasonTittle.text = season.alt_description
         }
 
     }
