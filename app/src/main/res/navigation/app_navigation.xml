@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@+id/nav_home" >
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.lamoda_v2.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/nav_cat"
+        android:name="com.example.lamoda_v2.catalog.CatalogFragment"
+        android:label="@string/menu_cat"
+        tools:layout="@layout/fragment_catalog"/>
+    <fragment
+        android:id="@+id/nav_basket"
+        android:name="com.example.lamoda_v2.basket.BasketFragment"
+        android:label="@string/menu_basket"
+        tools:layout="@layout/fragment_basket"/>
+    <fragment
+        android:id="@+id/nav_favorite"
+        android:name="com.example.lamoda_v2.favorite.FavoriteFragment"
+        android:label="@string/menu_favorite"
+        tools:layout="@layout/fragment_favorite"/>
+
+
+
+
+
+
+
+</navigation>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lamoda_v2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lamoda">Lamoda</string>
+    <string name="menu_home">Главная</string>
+    <string name="menu_cat">Каталог</string>
+    <string name="menu_basket">Корзина</string>
+    <string name="menu_favorite">Избраное</string>
+    <string name="some_">here should be some text</string>
+</resources>
