@@ -3,6 +3,7 @@ package com.example.lamoda_v2.adapters.homeAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -14,8 +15,6 @@ import com.example.lamoda_v2.databinding.HomeHorizontalRecyclerViewItemBinding
 import com.example.lamoda_v2.viewHolder.HomeRecyclerViewHolder
 
 class HomeHorizontalAdapter : ListAdapter<StoryItemData,HomeHorizontalAdapter.HomeViewHolder>(StoryItemDiffUtil()){
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeHorizontalAdapter.HomeViewHolder {
       return HomeViewHolder(LayoutInflater.from(parent.context)

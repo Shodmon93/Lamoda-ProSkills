@@ -9,7 +9,14 @@
         android:id="@+id/nav_home"
         android:name="com.example.lamoda_v2.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_itemDescriptionFragment"
+            app:destination="@id/itemDescriptionFragment" />
+        <argument
+            android:name="item_desc"
+            app:argType="integer" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_cat"
@@ -26,11 +33,20 @@
         android:name="com.example.lamoda_v2.favorite.FavoriteFragment"
         android:label="@string/menu_favorite"
         tools:layout="@layout/fragment_favorite"/>
-
-
-
-
-
+    <fragment
+        android:id="@+id/itemDescriptionFragment"
+        android:name="com.example.lamoda_v2.ItemDescriptionFragment"
+        android:label="Обзор"
+        tools:layout="@layout/fragment_item_description" />
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.example.lamoda_v2.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_fragment_to_itemDescriptionFragment"
+            app:destination="@id/itemDescriptionFragment" />
+    </fragment>
 
 
 </navigation>
