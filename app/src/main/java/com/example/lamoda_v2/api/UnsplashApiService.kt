@@ -3,6 +3,7 @@ package com.ru.gridrecyclerview.Api
 import com.example.lamoda_v2.data.Brand
 import com.example.lamoda_v2.data.Image
 import com.example.lamoda_v2.data.Season
+import com.example.lamoda_v2.data.StoryItemData
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -26,6 +27,9 @@ interface UnsplashApiService {
     @GET("photos")
     suspend fun getBrands() : List<Brand>
 
+    @Headers("Authorization: Client-ID kurunzHx57LPTLDpbn9anGrnyWeIUc6WiSsW-4f6LmI")
+    @GET("photos")
+    suspend fun getStoryData() : List<StoryItemData>
     @Headers("Authorization: Client-ID kurunzHx57LPTLDpbn9anGrnyWeIUc6WiSsW-4f6LmI")
     @GET("photos")
     suspend fun getSeason() : List<Season>

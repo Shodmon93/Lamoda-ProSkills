@@ -1,9 +1,11 @@
 package com.example.lamoda_v2.data
 
-
+import com.example.lamoda_v2.api.Urls
+import kotlinx.serialization.SerialName
 
 data class StoryItemData(
-    val id : Int,
-    val image: Int,
-    val title : String
+    val id : String = "",
+    val alt_description : String = "",
+    @SerialName("urls")
+    val urls: Urls? = null
 )

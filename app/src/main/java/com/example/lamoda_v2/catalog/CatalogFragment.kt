@@ -36,49 +36,6 @@ class CatalogFragment : Fragment() {
         return binding.root
     }
 
-//    fun getBrandData(): ArrayList<Brand> {
-//        val item: ArrayList<Brand> = ArrayList()
-//        repeat(9) {
-//            item.add(
-//                Brand(
-//                    "https://picsum.photos/200/300"
-//                )
-//            )
-//            item.add(Brand("https://picsum.photos/200/300"))
-//        }
-//        return item
-//
-//    }
-//
-//    fun getSeasonData(): List<Season> {
-//        val item: ArrayList<Season> = ArrayList()
-//
-//        item.add(Season("https://picsum.photos/200/300", "Nike"))
-//        item.add(
-//            Season(
-//                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQedKQeZ69cNPkrybiy3aV-CbqjmqnQEx9-yQ&usqp=CAU",
-//                "Adidas"
-//            )
-//        )
-//
-//        return item
-//    }
-//
-//    fun getImageData(): String {
-//        val item = "https://picsum.photos/200/300"
-//        return item
-//    }
-//
-//    fun getData(): List<CatalogRViewData> {
-//        val item: ArrayList<CatalogRViewData> = ArrayList()
-//        repeat(9) {
-//            item.add(CatalogRViewData(getBrandData(), null, null))
-//            item.add(CatalogRViewData(null, getSeasonData(), null))
-//            item.add(CatalogRViewData(null, null, getImageData()))
-//        }
-//        return item
-//    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         manItemViewModel = ViewModelProvider(requireActivity())[ManItemViewModel::class.java]
 
@@ -92,7 +49,7 @@ class CatalogFragment : Fragment() {
         catalogViewModel.status.observe(viewLifecycleOwner){
             if (it == false){
                 //If request fails
-                binding.progressBar.visibility = View.GONE
+             //   binding.progressBar.visibility
                 Toast.makeText(requireContext(),"Something went wrong",Toast.LENGTH_SHORT).show()
             } else if (it == true){
                 //If request passes it should be true

@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.bumptech.glide.Glide
 import com.example.lamoda_v2.R
 import com.example.lamoda_v2.data.StoryItemData
 import com.example.lamoda_v2.databinding.HorizontalRecyclerviewLayoutBinding
@@ -35,8 +36,11 @@ class HorizontalRecycleAdapter :
         val binding = HorizontalRecyclerviewLayoutBinding.bind(view)
 
         fun bindData(storyItemData: StoryItemData) {
-            binding.storyPhoto.setImageResource(storyItemData.image)
-            binding.textView.text = storyItemData.title
+            Glide.with(binding.root)
+                .load(storyItemData.urls)
+                .into(binding.storyPhoto)
+          //  binding.storyPhoto.setImageResource(storyItemData.image)
+            binding.textView.text = storyItemData.alt_description
         }
 
     }

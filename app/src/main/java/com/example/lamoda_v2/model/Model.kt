@@ -14,14 +14,14 @@ class Model {
 ////     var storyTitle: MutableLiveData<String> = MutableLiveData()
 //
     private var _manItemData: MutableLiveData<ArrayList<ManItemData>>
-    private var _storyItemData: MutableLiveData<ArrayList<StoryItemData>>
+ //   private var _storyItemData: MutableLiveData<ArrayList<StoryItemData>>
     private var _homeRViewData: MutableLiveData<ArrayList<HomeRViewData>>
 
     //    private var _brandData: MutableLiveData<ArrayList<Brand>>
 //
     init {
         _manItemData = MutableLiveData(getManData())
-        _storyItemData = MutableLiveData(getStoryData())
+//        _storyItemData = MutableLiveData(getStoryData())
         _homeRViewData = MutableLiveData(getHomeRViewData())
 //        _brandData = MutableLiveData(getBrandData())
     }
@@ -29,7 +29,7 @@ class Model {
     //
 //
     var manItemData: LiveData<ArrayList<ManItemData>> = _manItemData
-    var storyItemData: LiveData<ArrayList<StoryItemData>> = _storyItemData
+//    var storyItemData: LiveData<ArrayList<StoryItemData>> = _storyItemData
     var homeRViewData : LiveData<ArrayList<HomeRViewData>> = _homeRViewData
 
     //    var brandData: LiveData<ArrayList<Brand>> = _brandData
@@ -51,23 +51,23 @@ class Model {
 
     fun getHomeRViewData(): ArrayList<HomeRViewData>{
         val item : ArrayList<HomeRViewData> = ArrayList()
-        item.add(HomeRViewData(getStoryData(), null,null))
-        repeat(6){
-            item.add(HomeRViewData(null, PICTURE,"Adidas"))
-        }
+//        item.add(HomeRViewData(getStoryData(), null,null))
+//        repeat(6){
+//            item.add(HomeRViewData(null, PICTURE,"Adidas"))
+//        }
         return item
     }
 
-    fun getStoryData(): ArrayList<StoryItemData> {
-        val item: ArrayList<StoryItemData> = ArrayList()
-        item.add(StoryItemData(0, R.drawable.img_3339, "Summer"))
-        item.add(StoryItemData(1, R.drawable.img_3339, "Winter"))
-        item.add(StoryItemData(2, R.drawable.img_3339, "Spring"))
-        item.add(StoryItemData(3, R.drawable.img_3339, "Autumn"))
-        item.add(StoryItemData(4, R.drawable.img_3339, "Next"))
-        return item
-
-    }
+//    fun getStoryData(): ArrayList<StoryItemData> {
+//        val item: ArrayList<StoryItemData> = ArrayList()
+//        item.add(StoryItemData(0, R.drawable.img_3339, "Summer"))
+//        item.add(StoryItemData(1, R.drawable.img_3339, "Winter"))
+//        item.add(StoryItemData(2, R.drawable.img_3339, "Spring"))
+//        item.add(StoryItemData(3, R.drawable.img_3339, "Autumn"))
+//        item.add(StoryItemData(4, R.drawable.img_3339, "Next"))
+//        return item
+//
+//    }
 //
 ////    val brand: Brand = testGetBrandData()
 ////

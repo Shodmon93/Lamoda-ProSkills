@@ -31,9 +31,9 @@ class HomeHorizontalAdapter : ListAdapter<StoryItemData,HomeHorizontalAdapter.Ho
         fun bind(storyItemData: StoryItemData){
 
             Glide.with(binding.root)
-                .load(storyItemData.image)
+                .load(storyItemData.urls?.regular)
                 .into(binding.storyPhoto)
-            binding.storyTextView.text = storyItemData.title
+            binding.storyTextView.text = storyItemData.alt_description
 
         }
     }

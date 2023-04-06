@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.lamoda_v2.R
 import com.example.lamoda_v2.adapters.homeAdapter.HomeMainAdapter
 import com.example.lamoda_v2.adapters.recyclerView.RecyclerViewAdapter
+import com.example.lamoda_v2.catalog.CatalogViewModel
 import com.example.lamoda_v2.databinding.FragmentHomeBinding
 import com.example.lamoda_v2.man.viewModel.ManItemViewModel
 import com.example.lamoda_v2.viewHolder.HomeRecyclerViewHolder
@@ -22,7 +23,7 @@ import com.example.lamoda_v2.viewHolder.HomeRecyclerViewHolder
 class HomeFragment : Fragment() {
 
     private lateinit var binding : FragmentHomeBinding
-    private lateinit var manItemViewModel: ManItemViewModel
+    private lateinit var manItemViewModel: CatalogViewModel
     private lateinit var adapter: HomeMainAdapter
     private lateinit var recyclerView: RecyclerView
 
@@ -39,7 +40,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        manItemViewModel = ViewModelProvider(requireActivity())[ManItemViewModel::class.java]
+        manItemViewModel = ViewModelProvider(requireActivity())[CatalogViewModel::class.java]
         initUi()
 
     }
@@ -49,9 +50,8 @@ class HomeFragment : Fragment() {
         adapter = HomeMainAdapter{
             item ->
             Navigation.findNavController(binding.root).navigate(R.id.action_nav_home_to_itemDescriptionFragment)
-
         }
-        manItemViewModel.getHomeRViewData.observe(viewLifecycleOwner , Observer{data ->
+        manItemViewModel.homeData.observe(viewLifecycleOwner , Observer{data ->
             adapter.submitList(data)
         })
         recyclerView.adapter = adapter

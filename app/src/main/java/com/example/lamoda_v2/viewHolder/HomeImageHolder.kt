@@ -10,12 +10,19 @@ class HomeImageHolder (view:View) : RecyclerView.ViewHolder(view) {
     val binding = HomeRecyclerViewItemBinding.bind(view)
 
     fun bind(homeRViewData: HomeRViewData){
+        var image = ""
+        homeRViewData.imageView?.forEach { data->
+            repeat(5){
+                image = data.urls?.regular.toString()
+            }
+
+        }
         Glide.with(binding.root)
-            .load(homeRViewData.imageView)
+            .load(image)
             .into(binding.firstPicture)
         Glide.with(binding.root)
-            .load(homeRViewData.imageView)
-            .into(binding.firstPicture)
+            .load(image)
+            .into(binding.secondPicture)
         binding.firstTittle.text = homeRViewData.tittle
         binding.secondTittle.text = homeRViewData.tittle
 
