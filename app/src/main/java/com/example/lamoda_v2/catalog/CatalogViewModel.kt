@@ -41,11 +41,6 @@ class CatalogViewModel : ViewModel() {
            // var story = mutableListOf<StoryItemData>()
             try {
 
-
-                val randomPicture1 = Random.nextInt(10)
-                val image1 = retrofit.getImage()[randomPicture1].urls.regular
-
-
                 val brands: List<Brand> = retrofit.getBrands()
                 val story : List<StoryItemData> = retrofit.getStoryData()
                 val season = retrofit.getSeason()

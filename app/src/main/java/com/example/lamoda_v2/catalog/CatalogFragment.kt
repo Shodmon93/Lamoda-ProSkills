@@ -49,7 +49,7 @@ class CatalogFragment : Fragment() {
         catalogViewModel.status.observe(viewLifecycleOwner){
             if (it == false){
                 //If request fails
-             //   binding.progressBar.visibility
+                 binding.progressBar.visibility
                 Toast.makeText(requireContext(),"Something went wrong",Toast.LENGTH_SHORT).show()
             } else if (it == true){
                 //If request passes it should be true
